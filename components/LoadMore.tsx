@@ -1,9 +1,21 @@
 'use client'
+import { fetchAnime } from '@/actions/action'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
+import { AnimeProp } from './AnimeCard'
 
 function LoadMore() {
 	const { ref, inView } = useInView()
+	const [data, setData] = useState<AnimeProp[]>([])
+
+	useEffect(() => {
+		if (inView) {
+			fetchAnime(2).then((res) => {
+				setData([...data, ...res])
+			})
+		}
+	}, [inView, data])
 
 	return (
 		<>
