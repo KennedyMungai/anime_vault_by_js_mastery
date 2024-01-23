@@ -1,6 +1,5 @@
-'use client'
-import { motion as m } from 'framer-motion'
 import Image from 'next/image'
+import MotionDiv from './MotionDiv'
 
 export interface AnimeProp {
 	id: string
@@ -21,19 +20,7 @@ interface Prop {
 
 function AnimeCard({ anime }: Prop) {
 	return (
-		<m.div
-			className='max-w-sm rounded relative w-full'
-			initial={{ scale: 0, rotate: -90, opacity: 0 }}
-			animate={{ scale: 1, rotate: 0, opacity: 1 }}
-			transition={{
-				type: 'spring',
-				stiffness: 250,
-				damping: 20,
-				delay: 0.3,
-				ease: 'easeInOut'
-			}}
-			viewport={{ amount: 0 }}
-		>
+		<MotionDiv>
 			<div className='relative w-full h-[37vh]'>
 				<Image
 					src={`https://shikimori.one/${anime.image.original}`}
@@ -80,7 +67,7 @@ function AnimeCard({ anime }: Prop) {
 					</div>
 				</div>
 			</div>
-		</m.div>
+		</MotionDiv>
 	)
 }
 
