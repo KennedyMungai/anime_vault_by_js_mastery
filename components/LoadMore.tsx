@@ -8,7 +8,7 @@ function LoadMore() {
 	return (
 		<>
 			<section className='flex justify-center items-center w-full'>
-				<div>
+				<div ref={ref}>
 					<Image
 						src='./spinner.svg'
 						alt='spinner'
