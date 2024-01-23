@@ -29,8 +29,10 @@ function AnimeCard({ anime }: Prop) {
 				type: 'spring',
 				stiffness: 250,
 				damping: 20,
-				delay: 0.3
+				delay: 0.3,
+				ease: 'easeInOut'
 			}}
+			viewport={{ amount: 0 }}
 		>
 			<div className='relative w-full h-[37vh]'>
 				<Image
