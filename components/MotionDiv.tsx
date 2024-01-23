@@ -11,7 +11,7 @@ const MotionDiv = ({ children }: Props) => {
 	return (
 		<m.div
 			className='max-w-sm rounded relative w-full'
-			initial={{ scale: 0, rotate: -30, opacity: 0 }}
+			initial={{ scale: 0, rotate: -15, opacity: 0 }}
 			animate={{ scale: 1, rotate: 0, opacity: 1 }}
 			transition={{
 				type: 'spring',
